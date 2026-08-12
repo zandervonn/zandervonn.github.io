@@ -3,58 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Clash - Merge planets to reach the Sun</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#070b16">
+    <meta name="description" content="Cosmic Clash is a physics-based planet-merging game. Aim, launch, merge matching worlds, and build your way to the Sun.">
+    <link rel="canonical" href="https://zandervonn.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cosmic Clash">
+    <meta property="og:description" content="Merge planets. Reach the Sun.">
+    <meta property="og:url" content="https://zandervonn.github.io/">
+    <meta property="og:image" content="https://zandervonn.github.io/og.png">
+    <meta property="og:image:alt" content="A chain of planets merging toward a radiant Sun in Cosmic Clash.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Cosmic Clash — Merge planets. Reach the Sun.</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Cosmic Clash</h1>
-            <p>Merge planets to reach the Sun</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="shell header-inner">
+            <a class="brand" href="/" aria-label="Cosmic Clash home">
+                <span class="brand-orb" aria-hidden="true"></span>
+                <span>Cosmic Clash</span>
+            </a>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="#how-to-play">How to play</a>
+                <a href="#support">Support</a>
+                <a href="/privacy-policy">Privacy</a>
+            </nav>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#how-to-play">How to Play</a></li>
-                <li><a href="#road-map">Road Map</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-        </div>
-    </nav>
+    <main id="main">
+        <section class="hero">
+            <div class="shell hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Physics-based planet merging</p>
+                    <h1>Launch small.<br>Merge worlds.<br><span>Reach the Sun.</span></h1>
+                    <p class="lede">
+                        Drag to aim, release to launch, and collide matching planets.
+                        Every merge creates a larger world. How far can you take the chain?
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="https://apps.apple.com/us/app/the-cosmic-clash/id6484504761">
+                            View on the App Store
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        <a class="text-link" href="/privacy-policy">Read the privacy policy</a>
+                    </div>
+                </div>
 
-    <div class="container">
-        <section class="how-to-play" id="how-to-play">
-            <h2>How to Play</h2>
-            <ul>
-                <li><strong>PLAYING:</strong> Swipe on the screen to launch your planets.</li>
-                <li><strong>MERGE:</strong> When two planets of the same type collide, they combine into the next largest. Work your way up to the sun.</li>
-                <li><strong>ORDER:</strong> In order of scale - Pluto -> Mercury -> Mars -> Venus -> Earth -> Neptune -> Uranus -> Saturn -> Jupiter -> The Sun -> and beyond??</li>
-            </ul>
+                <div class="orbit-stage" aria-hidden="true">
+                    <span class="orbit orbit-one"></span>
+                    <span class="orbit orbit-two"></span>
+                    <span class="planet planet-small"></span>
+                    <span class="planet planet-mid"></span>
+                    <span class="planet planet-large"></span>
+                    <span class="sun"></span>
+                    <span class="orbit-caption">Pluto → planets → Sun → ?</span>
+                </div>
+            </div>
         </section>
 
-        <section class="road-map" id="road-map">
-            <h2>Road Map</h2>
-            <ul>
-                <li>More game modes!</li>
-                <li>Achievements</li>
-                <li>Settings</li>
-                <li>Performance Optimization</li>
-                <li>Music</li>
-                <li>ADS (sorry)</li>
-            </ul>
+        <section class="section how-section" id="how-to-play" aria-labelledby="how-title">
+            <div class="shell">
+                <div class="section-heading">
+                    <p class="eyebrow">How to play</p>
+                    <h2 id="how-title">One rule. Endless collisions.</h2>
+                    <p>Match identical planets to create the next world and build a bigger score.</p>
+                </div>
+
+                <ol class="steps">
+                    <li>
+                        <span class="step-marker" aria-hidden="true">01</span>
+                        <strong>Aim</strong>
+                        <p>Touch and drag to line up your shot around the gravity well.</p>
+                    </li>
+                    <li>
+                        <span class="step-marker" aria-hidden="true">02</span>
+                        <strong>Launch</strong>
+                        <p>Release and let motion, gravity, and a little nerve do the rest.</p>
+                    </li>
+                    <li>
+                        <span class="step-marker" aria-hidden="true">03</span>
+                        <strong>Merge</strong>
+                        <p>Collide matching planets, chain combos, and climb toward the Sun.</p>
+                    </li>
+                </ol>
+
+                <div class="merge-path" role="img" aria-label="The Cosmic Clash merge path: Pluto, planet chain, the Sun, and beyond.">
+                    <span>Pluto</span>
+                    <i aria-hidden="true"></i>
+                    <span>Planet chain</span>
+                    <i aria-hidden="true"></i>
+                    <span class="merge-path-sun">The Sun</span>
+                    <i aria-hidden="true"></i>
+                    <span>Beyond?</span>
+                </div>
+            </div>
         </section>
 
-        <section class="contact">
-            <h2>Bugs or more ideas!?</h2>
-            <p>Please email me at: <a href="mailto:zandervonn@gmail.com">zandervonn@gmail.com</a></p>
+        <section class="support-section" id="support" aria-labelledby="support-title">
+            <div class="shell support-panel">
+                <div>
+                    <p class="eyebrow">Ground control</p>
+                    <h2 id="support-title">Found a bug or have an idea?</h2>
+                    <p>Send a note with what happened and the device you were playing on.</p>
+                </div>
+                <a class="button button-secondary" href="mailto:zandervonn@gmail.com">Email support</a>
+            </div>
         </section>
-    </div>
+    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Cosmic Clash. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <p>© 2026 Alexander von Neudegg. Cosmic Clash.</p>
+            <div class="footer-links">
+                <a href="mailto:zandervonn@gmail.com">Contact</a>
+                <a href="/privacy-policy">Privacy</a>
+            </div>
         </div>
     </footer>
 </body>
