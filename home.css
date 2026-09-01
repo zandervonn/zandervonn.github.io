@@ -1,0 +1,773 @@
+:root {
+    --stone: #b8b3a6;
+    --stone-light: #d5cebc;
+    --ink: #25271f;
+    --moss: #59604d;
+    --soil: #36382f;
+    --chalk: #e5dfd1;
+    --rust: #744636;
+    --faded-ink: #5c5c51;
+    --line: rgba(37, 39, 31, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--stone);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration-color: rgba(37, 39, 31, 0.45);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.26em;
+}
+
+a:hover {
+    text-decoration-color: currentColor;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 4px;
+}
+
+img,
+svg {
+    display: block;
+}
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 20;
+    padding: 8px 10px;
+    background: var(--ink);
+    color: var(--chalk);
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.site-header,
+.introduction,
+.play,
+.support,
+.site-footer {
+    width: min(1180px, calc(100% - 64px));
+    margin-inline: auto;
+}
+
+.site-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 32px;
+    padding-block: 28px;
+}
+
+.wordmark {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+}
+
+.site-header nav,
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 26px;
+    font-size: 13px;
+}
+
+.introduction {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+    align-items: center;
+    gap: clamp(48px, 8vw, 130px);
+    min-height: 720px;
+    padding-block: 96px 110px;
+}
+
+.introduction-copy {
+    max-width: 610px;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 600px;
+    margin-bottom: 34px;
+    font-size: clamp(2.35rem, 3.4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+}
+
+.introduction-text {
+    max-width: 570px;
+    margin-bottom: 38px;
+    color: #33352d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.62;
+}
+
+.introduction-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 16px 30px;
+    font-size: 14px;
+}
+
+.primary-link {
+    font-weight: 700;
+    text-decoration-color: var(--rust);
+    text-decoration-thickness: 2px;
+}
+
+.primary-link span {
+    display: inline-block;
+    margin-left: 4px;
+}
+
+.gravity-study {
+    position: relative;
+    min-height: 540px;
+    margin: 0;
+    isolation: isolate;
+}
+
+.orbit-line {
+    position: absolute;
+    inset: 2% -3% 6% 0;
+    z-index: -1;
+    width: 103%;
+    height: 92%;
+    overflow: visible;
+}
+
+.orbit-line path {
+    fill: none;
+    stroke: rgba(37, 39, 31, 0.42);
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-dasharray: 2 8;
+}
+
+.planet,
+.merge-planet {
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid rgba(37, 39, 31, 0.48);
+    border-radius: 50%;
+    background: #8b887e;
+}
+
+.planet img,
+.merge-planet img {
+    position: absolute;
+    top: -12%;
+    left: -50%;
+    width: 200%;
+    max-width: none;
+    height: 124%;
+    object-fit: cover;
+    filter: saturate(0.65) sepia(0.12) contrast(0.95);
+}
+
+.planet::after,
+.merge-planet::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        circle at 34% 28%,
+        rgba(255, 255, 255, 0.14) 0 15%,
+        rgba(24, 24, 20, 0.04) 40%,
+        rgba(24, 24, 20, 0.55) 100%
+    );
+}
+
+.planet-moon-one {
+    top: 30%;
+    left: 29%;
+    width: 50px;
+    height: 50px;
+}
+
+.planet-moon-two {
+    top: 34%;
+    left: 39%;
+    width: 42px;
+    height: 42px;
+}
+
+.planet-mars {
+    top: 48%;
+    left: 34%;
+    width: 84px;
+    height: 84px;
+}
+
+.planet-venus {
+    top: 11%;
+    right: 10%;
+    width: 68px;
+    height: 68px;
+}
+
+.planet-earth {
+    right: 2%;
+    bottom: 9%;
+    width: 122px;
+    height: 122px;
+}
+
+.gravity-study figcaption {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 180px;
+    color: var(--faded-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+.rule {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 72px;
+    padding: 82px max(32px, calc((100vw - 1180px) / 2));
+    background: var(--soil);
+    color: var(--chalk);
+}
+
+.rule-copy {
+    max-width: 680px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+    line-height: 1.45;
+}
+
+.merge-mark {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 330px;
+}
+
+.merge-planet {
+    position: relative;
+    flex: 0 0 auto;
+    border-color: rgba(229, 223, 209, 0.35);
+}
+
+.merge-planet-small {
+    width: 42px;
+    height: 42px;
+}
+
+.merge-planet-large {
+    width: 78px;
+    height: 78px;
+}
+
+.merge-sign {
+    color: rgba(229, 223, 209, 0.6);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.merge-arrow {
+    margin-inline: 5px;
+}
+
+.play {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(430px, 1.15fr);
+    gap: clamp(60px, 10vw, 150px);
+    align-items: start;
+    padding-block: 130px 150px;
+}
+
+.play-copy h2 {
+    max-width: 470px;
+    margin-bottom: 24px;
+    font-size: clamp(1.8rem, 2.7vw, 2.35rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.14;
+}
+
+.play-copy p {
+    max-width: 450px;
+    margin-bottom: 30px;
+    color: #3d3e35;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.62;
+}
+
+.android-form {
+    padding-top: 6px;
+}
+
+.android-form label {
+    display: block;
+    margin-bottom: 26px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 16px;
+}
+
+.android-form input[type="email"] {
+    min-width: 0;
+    width: 100%;
+    padding: 13px 0 11px;
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+}
+
+.android-form input[type="email"]::placeholder {
+    color: rgba(37, 39, 31, 0.48);
+}
+
+.android-form button {
+    padding: 12px 15px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    font: 700 13px/1 Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.android-form button:hover {
+    background: var(--ink);
+    color: var(--stone-light);
+}
+
+.form-note {
+    margin: 18px 0 0;
+    color: var(--faded-ink);
+    font-size: 12px;
+}
+
+.form-note a {
+    margin-left: 12px;
+}
+
+.support {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(480px, 1.2fr);
+    gap: clamp(60px, 10vw, 150px);
+    align-items: start;
+    padding-block: 120px 140px;
+    border-top: 1px solid var(--line);
+}
+
+.support-copy h2 {
+    max-width: 440px;
+    margin-bottom: 24px;
+    font-size: clamp(1.8rem, 2.7vw, 2.35rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.14;
+}
+
+.support-copy p {
+    max-width: 430px;
+    color: #3d3e35;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.62;
+}
+
+.support-copy .support-direct {
+    margin-top: 28px;
+    color: var(--faded-ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.support-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 18px;
+}
+
+.support-field {
+    display: grid;
+    gap: 9px;
+}
+
+.support-field label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.support-field label span {
+    color: var(--faded-ink);
+    font-weight: 400;
+}
+
+.support-field input,
+.support-field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+}
+
+.support-field textarea {
+    min-height: 126px;
+    padding: 14px;
+    border: 1px solid var(--ink);
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.support-field input::placeholder,
+.support-field textarea::placeholder {
+    color: rgba(37, 39, 31, 0.48);
+}
+
+.support-message {
+    grid-column: 1 / -1;
+}
+
+.support-form button {
+    justify-self: start;
+    padding: 12px 15px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    font: 700 13px/1 Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.support-form button:hover {
+    background: var(--ink);
+    color: var(--stone-light);
+}
+
+.support-note {
+    align-self: center;
+    margin: 0;
+    color: var(--faded-ink);
+    font-size: 12px;
+}
+
+.honeypot {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-block: 28px 34px;
+    border-top: 1px solid var(--line);
+    color: var(--faded-ink);
+    font-size: 12px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.confirmation {
+    width: min(760px, calc(100% - 64px));
+    min-height: calc(100vh - 85px);
+    margin-inline: auto;
+    padding-block: clamp(110px, 18vh, 190px);
+}
+
+.confirmation h1 {
+    margin-bottom: 28px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.confirmation p {
+    max-width: 610px;
+    margin-bottom: 38px;
+    color: #33352d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.confirmation-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 30px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .introduction {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        min-height: 0;
+        padding-block: 82px 88px;
+    }
+
+    .introduction-copy {
+        max-width: 680px;
+    }
+
+    .gravity-study {
+        width: min(100%, 570px);
+        min-height: 500px;
+        margin-left: auto;
+    }
+
+    .rule {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .merge-mark {
+        min-width: 0;
+    }
+
+    .play {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .support {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+}
+
+@media (max-width: 560px) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .site-header,
+    .introduction,
+    .play,
+    .support,
+    .site-footer {
+        width: min(100% - 40px, 1180px);
+    }
+
+    .site-header {
+        display: block;
+        padding-block: 22px;
+    }
+
+    .site-header nav {
+        margin-top: 18px;
+        gap: 9px 21px;
+    }
+
+    .introduction {
+        padding-block: 62px 72px;
+    }
+
+    h1 {
+        margin-bottom: 28px;
+        font-size: clamp(2.15rem, 10vw, 2.55rem);
+        line-height: 1.06;
+    }
+
+    .introduction-text {
+        margin-bottom: 32px;
+        font-size: 17px;
+    }
+
+    .introduction-links {
+        display: grid;
+        justify-items: start;
+        gap: 16px;
+    }
+
+    .gravity-study {
+        min-height: 400px;
+        margin-top: 14px;
+    }
+
+    .planet-moon-one {
+        width: 38px;
+        height: 38px;
+    }
+
+    .planet-moon-two {
+        width: 34px;
+        height: 34px;
+    }
+
+    .planet-mars {
+        width: 67px;
+        height: 67px;
+    }
+
+    .planet-venus {
+        width: 54px;
+        height: 54px;
+    }
+
+    .planet-earth {
+        width: 96px;
+        height: 96px;
+    }
+
+    .gravity-study figcaption {
+        bottom: 4%;
+        width: 150px;
+        font-size: 13px;
+    }
+
+    .rule {
+        gap: 42px;
+        padding: 62px 20px;
+    }
+
+    .rule-copy {
+        font-size: 21px;
+    }
+
+    .merge-mark {
+        gap: 10px;
+    }
+
+    .merge-planet-small {
+        width: 34px;
+        height: 34px;
+    }
+
+    .merge-planet-large {
+        width: 64px;
+        height: 64px;
+    }
+
+    .merge-sign {
+        font-size: 17px;
+    }
+
+    .play {
+        gap: 58px;
+        padding-block: 86px 100px;
+    }
+
+    .play-copy h2 {
+        font-size: 29px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .android-form button {
+        justify-self: start;
+        margin-top: 8px;
+    }
+
+    .form-note a {
+        display: block;
+        margin: 8px 0 0;
+    }
+
+    .support {
+        gap: 56px;
+        padding-block: 86px 100px;
+    }
+
+    .support-copy h2 {
+        font-size: 29px;
+    }
+
+    .support-form {
+        grid-template-columns: 1fr;
+    }
+
+    .support-message {
+        grid-column: auto;
+    }
+
+    .support-note {
+        margin-top: -6px;
+    }
+
+    .site-footer {
+        display: block;
+    }
+
+    .site-footer nav {
+        margin-top: 14px;
+    }
+
+    .confirmation {
+        width: min(100% - 40px, 760px);
+        padding-block: 90px;
+    }
+
+    .confirmation p {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

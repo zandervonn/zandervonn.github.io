@@ -3,177 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#070b16">
-    <meta name="description" content="Cosmic Clash is a physics-based planet-merging game. Aim, launch, merge matching worlds, and build your way to the Sun.">
+    <meta name="theme-color" content="#b8b3a6">
+    <meta name="description" content="Cosmic Clash is a small physics game about dropping planets into orbit, matching worlds, and making room. Available on iPhone, with Android testing by request.">
     <link rel="canonical" href="https://zandervonn.github.io/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cosmic Clash">
-    <meta property="og:description" content="Merge planets. Reach the Sun.">
+    <meta property="og:title" content="Cosmic Clash — a small game about gravity">
+    <meta property="og:description" content="Drop planets into a crowded orbit. Matching worlds merge; every collision leaves you with a different problem.">
     <meta property="og:url" content="https://zandervonn.github.io/">
     <meta property="og:image" content="https://zandervonn.github.io/og.png">
-    <meta property="og:image:alt" content="A chain of planets merging toward a radiant Sun in Cosmic Clash.">
+    <meta property="og:image:alt" content="Planets gathering around a sun in Cosmic Clash.">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>Cosmic Clash — Merge planets. Reach the Sun.</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Cosmic Clash — a small game about gravity</title>
+    <link rel="stylesheet" href="/home.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-        <div class="shell header-inner">
-            <a class="brand" href="/" aria-label="Cosmic Clash home">
-                <span class="brand-orb" aria-hidden="true"></span>
-                <span>Cosmic Clash</span>
-            </a>
-            <nav class="primary-nav" aria-label="Primary navigation">
-                <a href="#get-the-game">Get the game</a>
-                <a href="#how-to-play">How to play</a>
-                <a href="#support">Support</a>
-                <a href="/privacy-policy">Privacy</a>
-            </nav>
-        </div>
+        <a class="wordmark" href="/" aria-label="Cosmic Clash home">Cosmic Clash</a>
+        <nav aria-label="Primary navigation">
+            <a href="https://apps.apple.com/pt/app/the-cosmic-clash/id6484504761">iPhone</a>
+            <a href="#android">Android test</a>
+            <a href="/privacy-policy.html">Privacy</a>
+        </nav>
     </header>
 
     <main id="main">
-        <section class="hero" id="get-the-game" aria-labelledby="hero-title">
-            <div class="shell hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow">Physics-based planet merging</p>
-                    <h1 id="hero-title">Launch small.<br>Merge worlds.<br><span>Reach the Sun.</span></h1>
-                    <p class="lede">
-                        Drag to aim, release to launch, and collide matching planets.
-                        Every merge creates a larger world. How far can you take the chain?
-                    </p>
-                    <div class="hero-actions">
-                        <a class="button button-primary" href="https://apps.apple.com/pt/app/the-cosmic-clash/id6484504761">
-                            Download for iOS
-                            <span aria-hidden="true">↗</span>
-                        </a>
-                    </div>
-                    <form class="android-access-form" action="https://formsubmit.co/zandervonn@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Cosmic Clash Android access request">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://zandervonn.github.io/android-access-received.html">
-                        <input type="hidden" name="Request" value="Cosmic Clash Android tester access">
-                        <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-                        <div class="android-access-heading">
-                            <strong>Android access</strong>
-                            <span>Currently invite-only</span>
-                        </div>
-                        <label for="android-google-email">Google Play email</label>
-                        <div class="android-access-controls">
-                            <input id="android-google-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
-                            <button class="button button-secondary" type="submit">
-                                Request access
-                                <span aria-hidden="true">→</span>
-                            </button>
-                        </div>
-                        <p class="android-access-note">
-                            I’ll use this only to add you to the tester list and contact you about access.
-                            <a href="https://play.google.com/store/apps/details?id=com.AIvonn.TheCosmicClash">Already invited? Open Google Play <span aria-hidden="true">↗</span></a>
-                        </p>
-                    </form>
+        <section class="introduction" aria-labelledby="introduction-title">
+            <div class="introduction-copy">
+                <h1 id="introduction-title">Cosmic Clash is a small game about dropping planets into a crowded orbit.</h1>
+                <p class="introduction-text">
+                    You choose where to let go. Gravity does the rest. When two matching
+                    worlds meet, they become something larger and leave you with a
+                    different problem.
+                </p>
+                <div class="introduction-links">
+                    <a class="primary-link" href="https://apps.apple.com/pt/app/the-cosmic-clash/id6484504761">
+                        Get Cosmic Clash for iPhone <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="#android">Join the Android test</a>
                 </div>
+            </div>
 
-                <div class="orbit-stage" aria-hidden="true">
-                    <span class="orbit orbit-one"></span>
-                    <span class="orbit orbit-two"></span>
-                    <span class="planet planet-small"></span>
-                    <span class="planet planet-mid"></span>
-                    <span class="planet planet-large"></span>
-                    <span class="sun"></span>
-                    <span class="orbit-caption">Pluto → planets → Sun → ?</span>
-                </div>
+            <figure class="gravity-study">
+                <svg class="orbit-line" viewBox="0 0 620 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                    <path d="M86 426C116 206 292 60 506 104C584 120 615 176 582 232C523 330 306 332 196 248C130 198 129 126 194 88"></path>
+                </svg>
+
+                <span class="planet planet-moon-one" aria-hidden="true">
+                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
+                </span>
+                <span class="planet planet-moon-two" aria-hidden="true">
+                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
+                </span>
+                <span class="planet planet-mars" aria-hidden="true">
+                    <img src="/assets/materials/mars.jpg" alt="" width="318" height="159">
+                </span>
+                <span class="planet planet-venus" aria-hidden="true">
+                    <img src="/assets/materials/venus.jpg" alt="" width="318" height="159">
+                </span>
+                <span class="planet planet-earth" aria-hidden="true">
+                    <img src="/assets/materials/earth.jpg" alt="" width="318" height="159">
+                </span>
+
+                <figcaption>A release, a pull, a collision. Then a new board.</figcaption>
+            </figure>
+        </section>
+
+        <section class="rule" aria-label="How Cosmic Clash works">
+            <p class="rule-copy">
+                Matching planets become one larger planet. The rule stays simple;
+                the space around them does not.
+            </p>
+
+            <div class="merge-mark" aria-hidden="true">
+                <span class="merge-planet merge-planet-small">
+                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
+                </span>
+                <span class="merge-sign">+</span>
+                <span class="merge-planet merge-planet-small">
+                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
+                </span>
+                <span class="merge-sign merge-arrow">→</span>
+                <span class="merge-planet merge-planet-large">
+                    <img src="/assets/materials/mars.jpg" alt="" width="318" height="159">
+                </span>
             </div>
         </section>
 
-        <section class="section how-section" id="how-to-play" aria-labelledby="how-title">
-            <div class="shell">
-                <div class="section-heading">
-                    <p class="eyebrow">How to play</p>
-                    <h2 id="how-title">One rule. Endless collisions.</h2>
-                    <p>Match identical planets to create the next world and build a bigger score.</p>
-                </div>
-
-                <ol class="steps">
-                    <li>
-                        <span class="step-marker" aria-hidden="true">01</span>
-                        <strong>Aim</strong>
-                        <p>Touch and drag to line up your shot around the gravity well.</p>
-                    </li>
-                    <li>
-                        <span class="step-marker" aria-hidden="true">02</span>
-                        <strong>Launch</strong>
-                        <p>Release and let motion, gravity, and a little nerve do the rest.</p>
-                    </li>
-                    <li>
-                        <span class="step-marker" aria-hidden="true">03</span>
-                        <strong>Merge</strong>
-                        <p>Collide matching planets, chain combos, and climb toward the Sun.</p>
-                    </li>
-                </ol>
-
-                <div class="merge-path" role="img" aria-label="The Cosmic Clash merge path: Pluto, planet chain, the Sun, and beyond.">
-                    <span>Pluto</span>
-                    <i aria-hidden="true"></i>
-                    <span>Planet chain</span>
-                    <i aria-hidden="true"></i>
-                    <span class="merge-path-sun">The Sun</span>
-                    <i aria-hidden="true"></i>
-                    <span>Beyond?</span>
-                </div>
+        <section class="play" id="android" aria-labelledby="play-title">
+            <div class="play-copy">
+                <h2 id="play-title">Play on iPhone now. Android is still in testing.</h2>
+                <p>
+                    Android access is invite-only for the moment. Leave the Google Play
+                    email you want added to the tester list.
+                </p>
+                <a class="primary-link" href="https://apps.apple.com/pt/app/the-cosmic-clash/id6484504761">
+                    Download for iPhone <span aria-hidden="true">↗</span>
+                </a>
             </div>
+
+            <form class="android-form" action="https://formsubmit.co/zandervonn@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Cosmic Clash Android access request">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://zandervonn.github.io/android-access-received.html">
+                <input type="hidden" name="Request" value="Cosmic Clash Android tester access">
+                <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+
+                <label for="android-google-email">Google Play email</label>
+                <div class="form-row">
+                    <input id="android-google-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+                    <button type="submit">Request access</button>
+                </div>
+                <p class="form-note">
+                    Used only for tester access.
+                    <a href="https://play.google.com/store/apps/details?id=com.AIvonn.TheCosmicClash">Already invited? Open Google Play ↗</a>
+                </p>
+            </form>
         </section>
 
-        <section class="support-section" id="support" aria-labelledby="support-title">
-            <div class="shell support-panel">
-                <div class="support-copy">
-                    <p class="eyebrow">Ground control</p>
-                    <h2 id="support-title">Found a bug or have an idea?</h2>
-                    <p>Send a note with what happened and the device you were playing on.</p>
-                    <p class="support-direct-email">
-                        Prefer email? Write directly to
-                        <a href="mailto:zandervonn@gmail.com">zandervonn@gmail.com</a>.
-                    </p>
-                </div>
-                <form class="support-form" action="https://formsubmit.co/zandervonn@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Cosmic Clash support message">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://zandervonn.github.io/support-message-received.html">
-                    <input type="hidden" name="Request" value="Cosmic Clash support">
-                    <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
-                    <div class="support-field">
-                        <label for="support-email">Your email</label>
-                        <input id="support-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
-                    </div>
-                    <div class="support-field">
-                        <label for="support-device">Device <span>(optional)</span></label>
-                        <input id="support-device" type="text" name="Device" placeholder="e.g. iPhone 15, Pixel 9 or Web">
-                    </div>
-                    <div class="support-field support-field-message">
-                        <label for="support-message">Message</label>
-                        <textarea id="support-message" name="Message" rows="5" placeholder="Tell me what happened or what you’d like to see." required></textarea>
-                    </div>
-                    <button class="button button-secondary" type="submit">
-                        Send message
-                        <span aria-hidden="true">→</span>
-                    </button>
-                    <p class="support-form-note">Your details are used only to respond to your support request.</p>
-                </form>
+        <section class="support" id="support" aria-labelledby="support-title">
+            <div class="support-copy">
+                <h2 id="support-title">Found a bug or have an idea?</h2>
+                <p>Send a note with what happened and the device you were playing on.</p>
+                <p class="support-direct">
+                    Prefer email?
+                    <a href="mailto:zandervonn@gmail.com">zandervonn@gmail.com</a>
+                </p>
             </div>
+
+            <form class="support-form" action="https://formsubmit.co/zandervonn@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Cosmic Clash support message">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://zandervonn.github.io/support-message-received.html">
+                <input type="hidden" name="Request" value="Cosmic Clash support">
+                <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" hidden>
+
+                <div class="support-field">
+                    <label for="support-email">Your email</label>
+                    <input id="support-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
+                </div>
+                <div class="support-field">
+                    <label for="support-device">Device <span>(optional)</span></label>
+                    <input id="support-device" type="text" name="Device" placeholder="iPhone 15, Pixel 9 or Web">
+                </div>
+                <div class="support-field support-message">
+                    <label for="support-message">Message</label>
+                    <textarea id="support-message" name="Message" rows="5" placeholder="What happened, or what would you like to see?" required></textarea>
+                </div>
+                <button type="submit">Send message</button>
+                <p class="support-note">Used only to respond to your support request.</p>
+            </form>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="shell footer-inner">
-            <p>© 2026 Alexander von Neudegg. Cosmic Clash.</p>
-            <div class="footer-links">
-                <a href="mailto:zandervonn@gmail.com">Contact</a>
-                <a href="/privacy-policy">Privacy</a>
-            </div>
-        </div>
+        <p>Made by Alexander von Neudegg.</p>
+        <nav aria-label="Footer navigation">
+            <a href="#support">Support</a>
+            <a href="/privacy-policy.html">Privacy</a>
+        </nav>
     </footer>
 </body>
 </html>
