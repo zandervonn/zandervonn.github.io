@@ -276,6 +276,26 @@ section[id] {
     margin-top: 2rem;
 }
 
+.android-access-note {
+    max-width: 42rem;
+    margin: 1.15rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.android-access-note a {
+    display: inline-block;
+    margin-left: 0.35rem;
+    color: var(--ink);
+    font-weight: 750;
+    text-decoration-color: rgba(103, 216, 255, 0.48);
+}
+
+.android-access-note a:hover {
+    color: var(--orbit);
+}
+
 .button {
     display: inline-flex;
     align-items: center;
