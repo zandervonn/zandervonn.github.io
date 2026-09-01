@@ -652,11 +652,8 @@ section[id] {
 }
 
 .support-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
+    display: grid;
+    gap: clamp(2rem, 6vw, 4.5rem);
     padding: clamp(1.5rem, 5vw, 3.5rem);
     overflow: hidden;
     border: 1px solid var(--line);
@@ -673,6 +670,90 @@ section[id] {
 .support-panel p:last-child {
     margin-bottom: 0;
     color: var(--muted);
+}
+
+.support-copy {
+    align-self: start;
+}
+
+.support-direct-email {
+    margin-top: 1.35rem;
+    font-size: 0.92rem;
+}
+
+.support-direct-email a {
+    color: var(--ink);
+    font-weight: 750;
+    text-decoration-color: rgba(103, 216, 255, 0.48);
+}
+
+.support-direct-email a:hover {
+    color: var(--orbit);
+}
+
+.support-form {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+}
+
+.support-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.support-field label {
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+.support-field label span {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.support-field input,
+.support-field textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.9rem;
+    outline: none;
+    color: var(--ink);
+    background: #091225;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.support-field input {
+    min-height: 3.15rem;
+}
+
+.support-field textarea {
+    min-height: 8rem;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.support-field input::placeholder,
+.support-field textarea::placeholder {
+    color: #738098;
+}
+
+.support-field input:focus,
+.support-field textarea:focus {
+    border-color: var(--orbit);
+    box-shadow: 0 0 0 3px rgba(103, 216, 255, 0.15);
+}
+
+.support-form .button {
+    justify-self: start;
+}
+
+.support-form-note {
+    font-size: 0.78rem;
+    line-height: 1.5;
 }
 
 .site-footer {
@@ -963,6 +1044,11 @@ section[id] {
     .orbit-stage {
         width: 38rem;
         margin-right: -8rem;
+    }
+
+    .support-panel {
+        grid-template-columns: minmax(0, 0.8fr) minmax(22rem, 1.2fr);
+        align-items: start;
     }
 
     .policy-layout {
