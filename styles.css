@@ -276,11 +276,74 @@ section[id] {
     margin-top: 2rem;
 }
 
-.android-access-note {
+.android-access-form {
     max-width: 42rem;
-    margin: 1.15rem 0 0;
+    margin-top: 1.35rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: rgba(13, 22, 40, 0.72);
+}
+
+.android-access-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.android-access-heading strong {
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 1.05rem;
+}
+
+.android-access-heading span,
+.android-access-form label {
     color: var(--muted);
     font-size: 0.92rem;
+}
+
+.android-access-form label {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-weight: 750;
+}
+
+.android-access-controls {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.android-access-controls input {
+    min-width: 0;
+    flex: 1 1 15rem;
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    outline: none;
+    color: var(--ink);
+    background: #091225;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.android-access-controls input::placeholder {
+    color: #738098;
+}
+
+.android-access-controls input:focus {
+    border-color: var(--orbit);
+    box-shadow: 0 0 0 3px rgba(103, 216, 255, 0.15);
+}
+
+.android-access-note {
+    margin: 0.8rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
     line-height: 1.55;
 }
 
@@ -294,6 +357,15 @@ section[id] {
 
 .android-access-note a:hover {
     color: var(--orbit);
+}
+
+.form-honeypot {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
 }
 
 .button {
@@ -356,6 +428,45 @@ section[id] {
     aspect-ratio: 1;
     margin-inline: auto;
     filter: drop-shadow(0 2rem 4rem rgba(0, 0, 0, 0.35));
+}
+
+.request-confirmation {
+    display: grid;
+    min-height: calc(100svh - 4.6rem);
+    place-items: center;
+}
+
+.request-confirmation-inner {
+    padding-block: 5rem;
+    text-align: center;
+}
+
+.request-confirmation h1 {
+    margin-bottom: 1rem;
+    color: var(--solar);
+    font-size: clamp(2.8rem, 9vw, 6rem);
+}
+
+.request-confirmation p:not(.eyebrow) {
+    max-width: 38rem;
+    margin-inline: auto;
+    color: #c7d0e0;
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+
+.request-confirmation .hero-actions {
+    justify-content: center;
+}
+
+@media (max-width: 36rem) {
+    .android-access-controls {
+        flex-direction: column;
+    }
+
+    .android-access-controls .button {
+        width: 100%;
+    }
 }
 
 .orbit-stage::before {

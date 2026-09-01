@@ -51,15 +51,30 @@
                             Download for iOS
                             <span aria-hidden="true">↗</span>
                         </a>
-                        <a class="button button-secondary" href="mailto:zandervonn@gmail.com?subject=Cosmic%20Clash%20Android%20access&amp;body=Google%20Play%20email%3A%20">
-                            Request Android access
-                            <span aria-hidden="true">→</span>
-                        </a>
                     </div>
-                    <p class="android-access-note">
-                        Android is currently invite-only. Send the Google Play email you use and I’ll add you to the tester list.
-                        <a href="https://play.google.com/store/apps/details?id=com.AIvonn.TheCosmicClash">Already invited? Open Google Play <span aria-hidden="true">↗</span></a>
-                    </p>
+                    <form class="android-access-form" action="https://formsubmit.co/zandervonn@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="New Cosmic Clash Android access request">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://zandervonn.github.io/android-access-received.html">
+                        <input type="hidden" name="Request" value="Cosmic Clash Android tester access">
+                        <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <div class="android-access-heading">
+                            <strong>Android access</strong>
+                            <span>Currently invite-only</span>
+                        </div>
+                        <label for="android-google-email">Google Play email</label>
+                        <div class="android-access-controls">
+                            <input id="android-google-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
+                            <button class="button button-secondary" type="submit">
+                                Request access
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                        <p class="android-access-note">
+                            I’ll use this only to add you to the tester list and contact you about access.
+                            <a href="https://play.google.com/store/apps/details?id=com.AIvonn.TheCosmicClash">Already invited? Open Google Play <span aria-hidden="true">↗</span></a>
+                        </p>
+                    </form>
                 </div>
 
                 <div class="orbit-stage" aria-hidden="true">
