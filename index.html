@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#b8b3a6">
-    <meta name="description" content="Cosmic Clash is a small physics game about dropping planets into orbit, matching worlds, and making room. Available on iPhone, with Android testing by request.">
+    <meta name="theme-color" content="#080d1b">
+    <meta name="description" content="A chill game about merging planets all the way to the Sun (and beyond?). Made by one person. Free to play. Never a forced ad. That's Cosmic Clash.">
     <link rel="canonical" href="https://zandervonn.github.io/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cosmic Clash — a small game about gravity">
-    <meta property="og:description" content="Drop planets into a crowded orbit. Matching worlds merge; every collision leaves you with a different problem.">
+    <meta property="og:title" content="Cosmic Clash — What game isn’t better in space?">
+    <meta property="og:description" content="A chill game about merging planets all the way to the Sun (and beyond?). Made by one person. Free to play. Never a forced ad.">
     <meta property="og:url" content="https://zandervonn.github.io/">
     <meta property="og:image" content="https://zandervonn.github.io/og.png">
     <meta property="og:image:alt" content="Planets gathering around a sun in Cosmic Clash.">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>Cosmic Clash — a small game about gravity</title>
+    <title>Cosmic Clash — What game isn’t better in space?</title>
     <link rel="stylesheet" href="/home.css">
+    <script src="/starfield.js" defer></script>
+    <script src="/gameplay.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -33,11 +35,11 @@
     <main id="main">
         <section class="introduction" aria-labelledby="introduction-title">
             <div class="introduction-copy">
-                <h1 id="introduction-title">Cosmic Clash is a small game about dropping planets into a crowded orbit.</h1>
+                <h1 id="introduction-title">What game isn’t better in space?</h1>
                 <p class="introduction-text">
-                    You choose where to let go. Gravity does the rest. When two matching
-                    worlds meet, they become something larger and leave you with a
-                    different problem.
+                    A chill game about merging planets all the way to the Sun
+                    (and beyond?). Made by one person. Free to play. Never a forced ad.
+                    I think you’ll love it. Or your money back. (It’s free.)
                 </p>
                 <div class="introduction-links">
                     <a class="primary-link" href="https://apps.apple.com/pt/app/the-cosmic-clash/id6484504761">
@@ -47,50 +49,72 @@
                 </div>
             </div>
 
-            <figure class="gravity-study">
-                <svg class="orbit-line" viewBox="0 0 620 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                    <path d="M86 426C116 206 292 60 506 104C584 120 615 176 582 232C523 330 306 332 196 248C130 198 129 126 194 88"></path>
-                </svg>
 
-                <span class="planet planet-moon-one" aria-hidden="true">
-                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
-                </span>
-                <span class="planet planet-moon-two" aria-hidden="true">
-                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
-                </span>
-                <span class="planet planet-mars" aria-hidden="true">
-                    <img src="/assets/materials/mars.jpg" alt="" width="318" height="159">
-                </span>
-                <span class="planet planet-venus" aria-hidden="true">
-                    <img src="/assets/materials/venus.jpg" alt="" width="318" height="159">
-                </span>
-                <span class="planet planet-earth" aria-hidden="true">
-                    <img src="/assets/materials/earth.jpg" alt="" width="318" height="159">
-                </span>
+        </section>
 
-                <figcaption>A release, a pull, a collision. Then a new board.</figcaption>
+        <section class="gameplay-showcase" id="gameplay" aria-label="Cosmic Clash in motion">
+            <div class="video-track">
+            <figure class="gameplay-preview">
+                <video id="gameplay-video" width="480" height="1044" muted loop playsinline controls preload="none" poster="/assets/video/cosmic-clash-gameplay.jpg" aria-label="Cosmic Clash gameplay: aim planets and merge matching pairs">
+                    <source src="/assets/video/cosmic-clash-gameplay.mp4" type="video/mp4">
+                    <a href="/assets/video/cosmic-clash-gameplay.mp4">Watch Cosmic Clash gameplay</a>
+                </video>
+                <figcaption>
+                    <span>Just one more planet.</span>
+                    <button class="video-toggle" type="button" aria-controls="gameplay-video" hidden>Play gameplay</button>
+                </figcaption>
             </figure>
+            </div>
+            <div class="planet-column" aria-hidden="true">
+                <div class="orbit-stage">
+                    <svg class="orbit-path" aria-hidden="true">
+                        <defs>
+                            <mask id="orbit-reveal-mask" maskUnits="userSpaceOnUse">
+                                <path class="orbit-reveal" fill="none" stroke="white" stroke-width="8" pathLength="1"></path>
+                            </mask>
+                        </defs>
+                        <path class="orbit-route" mask="url(#orbit-reveal-mask)"></path>
+                    </svg>
+                    <span class="planet orbit-pluto surface-pluto"><img src="/assets/materials/moon.jpg" alt="" width="318" height="159"></span>
+                    <span class="planet orbit-mercury-two"><img src="/assets/materials/moon.jpg" alt="" width="318" height="159"></span>
+                    <span class="planet orbit-mars"><img src="/assets/materials/mars.jpg" alt="" width="318" height="159"></span>
+                    <span class="planet orbit-venus"><img src="/assets/materials/venus.jpg" alt="" width="318" height="159"></span>
+                    <span class="planet orbit-earth"><img src="/assets/materials/earth.jpg" alt="" width="318" height="159"></span>
+                    <span class="planet orbit-neptune surface-neptune"><img src="/assets/materials/neptune.jpg" alt="" width="640" height="320" loading="lazy"></span>
+                    <span class="planet orbit-uranus ringed-planet ringed-uranus"><span class="planet-surface"><img src="/assets/materials/uranus.jpg" alt="" width="640" height="320" loading="lazy"></span></span>
+                    <span class="planet orbit-saturn ringed-planet ringed-saturn"><span class="planet-surface"><img src="/assets/materials/saturn.jpg" alt="" width="640" height="320" loading="lazy"></span></span>
+                    <span class="planet orbit-jupiter"><img src="/assets/materials/jupiter.jpg" alt="" width="640" height="320" loading="lazy"></span>
+                    <span class="planet orbit-sun"></span>
+                </div>
+            </div>
+            <div class="sun-horizon" aria-hidden="true">
+                <div class="sun-disc"><img src="/assets/materials/sun.jpg" alt="" width="1024" height="512" loading="lazy"></div>
+            </div>
         </section>
 
         <section class="rule" aria-label="How Cosmic Clash works">
-            <p class="rule-copy">
-                Matching planets become one larger planet. The rule stays simple;
-                the space around them does not.
-            </p>
+            <div class="rule-description">
+                <p class="rule-copy">
+                    Two matching planets make a bigger one. Simple enough. Until you’re
+                    convinced you can squeeze in just one more.
+                </p>
 
-            <div class="merge-mark" aria-hidden="true">
-                <span class="merge-planet merge-planet-small">
-                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
-                </span>
-                <span class="merge-sign">+</span>
-                <span class="merge-planet merge-planet-small">
-                    <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
-                </span>
-                <span class="merge-sign merge-arrow">→</span>
-                <span class="merge-planet merge-planet-large">
-                    <img src="/assets/materials/mars.jpg" alt="" width="318" height="159">
-                </span>
+                <div class="merge-mark" aria-hidden="true">
+                    <span class="merge-planet merge-planet-small">
+                        <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
+                    </span>
+                    <span class="merge-sign">+</span>
+                    <span class="merge-planet merge-planet-small">
+                        <img src="/assets/materials/moon.jpg" alt="" width="318" height="159">
+                    </span>
+                    <span class="merge-sign merge-arrow">→</span>
+                    <span class="merge-planet merge-planet-large">
+                        <img src="/assets/materials/mars.jpg" alt="" width="318" height="159">
+                    </span>
+                </div>
             </div>
+
+
         </section>
 
         <section class="play" id="android" aria-labelledby="play-title">
